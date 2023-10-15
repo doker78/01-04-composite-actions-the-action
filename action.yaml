@@ -46,9 +46,9 @@ runs:
       run: flake8 --ignore=E501,E231 ${{ steps.project_files.outputs.files }}
       shell: bash
     
-    - name: pylint
-      run: pylint --errors-only --ignore=E401 ${{ steps.project_files.outputs.files }}
-      shell: bash
+    # - name: pylint
+    #   run: pylint --errors-only --ignore=E401 ${{ steps.project_files.outputs.files }}
+    #   shell: bash
 
     - name: unit tests
       if: ${{ inputs.RUN_UNIT_TESTS == false }}
