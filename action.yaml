@@ -25,6 +25,7 @@ runs:
     
     - name: Install requirements
       run: |
+        pip install --upgrade pip
         pip install -r requirements.txt
         pip install flake8
         pip install pylint
