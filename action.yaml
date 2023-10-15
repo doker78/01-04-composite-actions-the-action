@@ -47,7 +47,7 @@ runs:
       shell: bash
     
     - name: pylint
-      run: pylint --errors-only --disable=C0301 ${{ steps.project_files.outputs.files }}
+      run: pylint --errors-only ${{ steps.project_files.outputs.files }}
       shell: bash
 
     - name: unit tests
