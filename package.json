@@ -9,15 +9,15 @@
     },
     "repository": {
       "type": "git",
-      "url": "git+https://github.com/doker78/javascript-action-template.git"
+      "url": "git+https://github.com/doker78/01-04-composite-actions-the-action.git"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "bugs": {
-      "url": "https://github.com/doker78/javascript-action-template/issues"
+      "url": "https://github.com/doker78/01-04-composite-actions-the-action/issues"
     },
-    "homepage": "https://github.com/doker78/javascript-action-template#readme",
+    "homepage": "https://github.com/doker78/01-04-composite-actions-the-action#readme",
     "dependencies": {
       "@actions/core": "^1.6.0",
       "@actions/github": "^5.0.0"
