@@ -1,0 +1,26 @@
+{
+    "name": "javascript-action-template",
+    "version": "1.0.0",
+    "description": "A template for creating an Action using JavaScript",
+    "main": "index.js",
+    "scripts": {
+      "build": "ncc build index.js",
+      "test": "INPUT_GITHUB_TOKEN=1234567890 node dist/index.js"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/doker78/javascript-action-template.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/doker78/javascript-action-template/issues"
+    },
+    "homepage": "https://github.com/doker78/javascript-action-template#readme",
+    "dependencies": {
+      "@actions/core": "^1.6.0",
+      "@actions/github": "^5.0.0"
+    }
+  }
+  
