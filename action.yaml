@@ -1,56 +1,22 @@
-name: Standard Python Steps
-description: Runs the standard steps for Python
+name: 'Hello Universe'
+description: 'This action welcomes the user to the GitHub Universe'
 inputs:
-  PYTHON_VERSION:
-    description: The version of Python to use
+  GITHUB_TOKEN:
+    description: 'This is the GitHub token that lets the action authenticate'
     required: true
-    default: 3.x
-  RUN_UNIT_TESTS:
-    description: Set to true to run unit tests
+  input_1:
+    description: 'This is the first input; it is required and does not have a default'
+    required: true
+  input_2:
+    description: 'This is the second input; it is not required and has a default'
     required: false
-    default: false
+    default: 'The default value'
 outputs:
-  PROJECT_FILES:
-    description: "The pattern used to match files in the project"
-    value: ${{ steps.project_files.outputs.files }}
+  output_1:
+    description: 'This is the first output'
 runs:
-  using: "composite"
-  steps:
-    - uses: actions/checkout@v4
-    
-    - name: Set up Python ${{ inputs.PYTHON_VERSION }}
-      uses: actions/setup-python@v4
-      with:
-        python-version: ${{ inputs.PYTHON_VERSION }}
-    
-    - name: Install requirements
-      run: |
-        pip install --upgrade pip
-        pip install -r requirements.txt
-        pip install flake8
-        pip install pylint
-      shell: bash
-
-    - name: Identify project files
-      id: project_files
-      run: |
-        if [ -d "./tests" ];
-        then
-          echo "::set-output name=files::*.py tests/*.py"
-        else
-          echo "::set-output name=files::*.py"
-        fi        
-      shell: bash
-    
-    - name: flake8
-      run: flake8 --ignore=E501,E231 ${{ steps.project_files.outputs.files }}
-      shell: bash
-    
-    # - name: pylint
-    #   run: pylint --errors-only --ignore=E401 ${{ steps.project_files.outputs.files }}
-    #   shell: bash
-
-    - name: unit tests
-      if: ${{ inputs.RUN_UNIT_TESTS == false }}
-      run: python -m unittest --verbose --failfast  
-      shell: bash
+  using: 'node18'
+  main: 'dist/index.js'
+branding:
+  icon: 'zap'
+  color: 'yellow'
